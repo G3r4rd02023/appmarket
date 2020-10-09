@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Appmarket.Data;
 using Appmarket.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Appmarket.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CountriesController : Controller
     {
         private readonly DataContext _context;
