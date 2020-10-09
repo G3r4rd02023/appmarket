@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Appmarket.Data.Entities
 {
@@ -17,6 +14,9 @@ namespace Appmarket.Data.Entities
 
         [NotMapped]
         public int IdCountry { get; set; }
+
+        [JsonIgnore]
+        public Country Country { get; set; }
 
     }
 

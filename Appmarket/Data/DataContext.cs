@@ -20,13 +20,19 @@ namespace Appmarket.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Country>()
-                .HasIndex(t => t.Name)
-                .IsUnique();
+            modelBuilder.Entity<Country>(cou =>
+            {
+                cou.HasIndex("Name").IsUnique();
+                cou.HasMany(c => c.Cities).WithOne(d => d.Country).OnDelete(DeleteBehavior.Cascade);
+            });
 
-            modelBuilder.Entity<City>()
-           .HasIndex(t => t.Name)
-           .IsUnique();
+
+            modelBuilder.Entity<City>(cit =>
+            {
+                cit.HasIndex("Name", "CountryId").IsUnique();
+                cit.HasOne(c => c.Country).WithMany(d => d.Cities).OnDelete(DeleteBehavior.Cascade);
+            });
+
 
             modelBuilder.Entity<Category>()
             .HasIndex(t => t.Name)

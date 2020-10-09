@@ -9,6 +9,12 @@ namespace Appmarket.Helpers
     public interface ICombosHelper
     {
         IEnumerable<SelectListItem> GetComboCategories();
+
+        IEnumerable<SelectListItem> GetComboCountries();
+
+        IEnumerable<SelectListItem> GetComboCities(int countryId);
+
+
     }
 
 }
