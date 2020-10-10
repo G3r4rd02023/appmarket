@@ -18,6 +18,7 @@ namespace Appmarket.Helpers
             _context = context;
         }
 
+
         public IEnumerable<SelectListItem> GetComboCategories()
         {
             List<SelectListItem> list = _context.Categories.Select(t => new SelectListItem
@@ -76,6 +77,25 @@ namespace Appmarket.Helpers
             list.Insert(0, new SelectListItem
             {
                 Text = "[Select a country...]",
+                Value = "0"
+            });
+
+            return list;
+        }
+
+        public IEnumerable<SelectListItem> GetComboProducts()
+        {
+            List<SelectListItem> list = _context.Products.Select(t => new SelectListItem
+            {
+                Text = t.Name,
+                Value = $"{t.Id}"
+            })
+                .OrderBy(t => t.Text)
+                .ToList();
+
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Select a product...]",
                 Value = "0"
             });
 

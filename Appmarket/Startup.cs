@@ -1,6 +1,7 @@
 ﻿using Appmarket.Data;
 using Appmarket.Data.Entities;
 using Appmarket.Helpers;
+using Appmarket.Respositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -72,6 +73,7 @@ namespace Appmarket
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IMailHelper, MailHelper>();
             services.AddScoped<ICombosHelper, CombosHelper>();
             services.AddScoped<IUserHelper, UserHelper>();

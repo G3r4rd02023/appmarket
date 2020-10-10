@@ -14,7 +14,7 @@ namespace Appmarket.Helpers
 
         IEnumerable<SelectListItem> GetComboCities(int countryId);
 
-
+        IEnumerable<SelectListItem> GetComboProducts();
     }
 
 }
