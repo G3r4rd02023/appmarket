@@ -44,14 +44,14 @@ namespace Appmarket.Data
                 Category ropa = await _context.Categories.FirstOrDefaultAsync(c => c.Name == "Ropa");
                 Category tecnologia = await _context.Categories.FirstOrDefaultAsync(c => c.Name == "Tecnología");
                 string lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida, nunc vel tristique cursus, velit nibh pulvinar enim, non pulvinar lorem leo eget felis. Proin suscipit dignissim nisl, at elementum justo laoreet sed. In tortor nibh, auctor quis est gravida, blandit elementum nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer placerat nisi dui, id rutrum nisi viverra at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque sodales sollicitudin tempor. Fusce volutpat, purus sit amet placerat gravida, est magna gravida risus, a ultricies augue magna vel dolor. Fusce egestas venenatis velit, a ultrices purus aliquet sed. Morbi lacinia purus sit amet nisi vulputate mollis. Praesent in volutpat tortor. Etiam ac enim id ligula rutrum semper. Sed mattis erat sed condimentum congue. Vestibulum consequat tristique consectetur. Nunc in lorem in sapien vestibulum aliquet a vel leo.";
-                await AddProductAsync(mascotas, lorem, "Bulldog Frances", 2500000M, new string[] { "Bulldog1", "Bulldog2", "Bulldog3", "Bulldog4" }, user);
-                await AddProductAsync(ropa, lorem, "Buso GAP Hombre", 85000M, new string[] { "BusoGAP1", "BusoGAP2" }, user);
-                await AddProductAsync(tecnologia, lorem, "iPhone 11", 3500000M, new string[] { "iPhone1", "iPhone2", "iPhone3", "iPhone4", "iPhone5" }, user);
-                await AddProductAsync(tecnologia, lorem, "iWatch \"42", 2100000M, new string[] { "iWatch" }, user);
-                await AddProductAsync(ropa, lorem, "Tennis Adidas", 250000M, new string[] { "Adidas" }, user);
-                await AddProductAsync(mascotas, lorem, "Collie", 350000M, new string[] { "Collie1", "Collie2", "Collie3", "Collie4", "Collie5" }, user);
-                await AddProductAsync(tecnologia, lorem, "MacBook Pro 16\" 1TB", 12000000M, new string[] { "MacBookPro1", "MacBookPro2", "MacBookPro3", "MacBookPro4" }, user);
-                await AddProductAsync(ropa, lorem, "Sudadera Mujer", 95000M, new string[] { "Sudadera1", "Sudadera2", "Sudadera3", "Sudadera4", "Sudadera5" }, user);
+                await AddProductAsync(mascotas, lorem, "Bulldog Frances", 2500, new string[] { "Bulldog1", "Bulldog2", "Bulldog3", "Bulldog4" }, user);
+                await AddProductAsync(ropa, lorem, "Buso GAP Hombre", 850, new string[] { "BusoGAP1", "BusoGAP2" }, user);
+                await AddProductAsync(tecnologia, lorem, "iPhone 11", 3500, new string[] { "iPhone1", "iPhone2", "iPhone3", "iPhone4", "iPhone5" }, user);
+                await AddProductAsync(tecnologia, lorem, "iWatch \"42", 2100, new string[] { "iWatch" }, user);
+                await AddProductAsync(ropa, lorem, "Tennis Adidas", 2500, new string[] { "Adidas" }, user);
+                await AddProductAsync(mascotas, lorem, "Collie", 3500, new string[] { "Collie1", "Collie2", "Collie3", "Collie4", "Collie5" }, user);
+                await AddProductAsync(tecnologia, lorem, "MacBook Pro 16\" 1TB", 12000, new string[] { "MacBookPro1", "MacBookPro2", "MacBookPro3", "MacBookPro4" }, user);
+                await AddProductAsync(ropa, lorem, "Sudadera Mujer", 950, new string[] { "Sudadera1", "Sudadera2", "Sudadera3", "Sudadera4", "Sudadera5" }, user);
                 await _context.SaveChangesAsync();
             }
         }
