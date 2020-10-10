@@ -152,7 +152,7 @@ namespace Appmarket.Respositories
 
             var order = new Order
             {
-                OrderDate = DateTime.UtcNow,
+                OrderDate = DateTime.Now,
                 User = user,
                 Items = details,
             };
