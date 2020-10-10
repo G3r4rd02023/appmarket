@@ -46,9 +46,9 @@
                     @Html.DisplayFor(modelItem => item.Value)
                 </td>
                 <td id="@item.Id">
-                    <a asp-action="Increase" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa fa-plus"></i></a>
-                    <a asp-action="Decrease" asp-route-id="@item.Id" class="btn btn-info"><i class="fa fa-minus"></i></a>
-                    <a asp-action="DeleteItem" asp-route-id="@item.Id" class="btn btn-danger" id="btnDeleteItem">>Delete</a>
+                    <a asp-action="Increase" asp-route-id="@item.Id" class="btn btn-warning"><i class="glyphicon glyphicon-plus"></i></a>
+                    <a asp-action="Decrease" asp-route-id="@item.Id" class="btn btn-info"><i class="glyphicon glyphicon-erase"></i></a>
+                    <a asp-action="DeleteItem" asp-route-id="@item.Id" class="btn btn-danger"><i class="glyphicon glyphicon-trash" id="btnDeleteItem"></i></a>
                 </td>
             </tr>
         }
