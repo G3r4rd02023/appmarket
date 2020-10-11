@@ -286,24 +286,18 @@ namespace Appmarket.Controllers
             var country = await _context.Countries
                 .Include(c => c.Cities)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (country == null)
             {
                 return NotFound();
             }
-
-            return View(country);
-        }
-
-        // POST: Countries/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var country = await _context.Countries.FindAsync(id);
+           
             _context.Countries.Remove(country);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+                    
         }
+     
 
         private bool CountryExists(int id)
         {
