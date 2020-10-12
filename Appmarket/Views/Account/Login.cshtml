@@ -5,9 +5,9 @@
 }
 
 <h2>Login</h2>
-
+<hr />
 <div class="row">
-    <div class="col-md-4 offset-md-4">
+    <div class="col-md-6 offset-md-6">
         <form method="post">
             <div asp-validation-summary="ModelOnly"></div>
             
@@ -35,9 +35,12 @@
             <div class="form-group">
                 <input type="submit" value="Login" class="btn btn-success" />
                 <a asp-action="Register" class="btn btn-primary">Register New User</a>
-                <a asp-action="RecoverPassword" class="btn btn-link">Forgot your password?</a>
+                <a asp-action="RecoverPassword" class="btn btn-info">Forgot your password?</a>
             </div>
         </form>
+    </div>
+    <div class="col-md-6 offset-md-6">
+        <img src="~/images/candado2.png" height="250" width="250"/> 
     </div>
 </div>
 
