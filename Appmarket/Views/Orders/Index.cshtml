@@ -76,6 +76,7 @@
                                     {
                                         <a asp-action="Deliver" asp-route-id="@item.Id" class="btn btn-info" id="btnDeliver">Deliver</a>
                                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                        <a asp-action="DeleteOrder" asp-route-id="@item.Id" class="btn btn-danger"><i class="glyphicon glyphicon-trash" id="btnDeleteOrder"></i></a>
                                     }
                                     else
                                     {
@@ -91,6 +92,24 @@
         </div>
     </div>
 </div>
+<div id="deleteDialog" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-window-close"></i></button>
+                <h4 class="modal-title">Delete</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to delete the order?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btnYesDelete">Delete</button>
+                <button type="button" class="btn btn-success" id="btnNoDelete">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -98,6 +117,24 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#MyTable').DataTable();
+
+            var id = 0;
+
+            $('a[id*=btnDeleteOrder]').click(function () {
+                debugger;
+                id = $(this).parent()[0].id;
+                $("#deleteDialog").modal('show');
+                return false;
+            });
+
+            $("#btnNoDelete").click(function () {
+                $("#deleteDialog").modal('hide');
+                return false;
+            });
+
+            $("#btnYesDelete").click(function () {
+                window.location.href = '/Orders/DeleteOrder/' + id;
+            });
         });
     </script>
 }

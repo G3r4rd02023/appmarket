@@ -125,6 +125,20 @@ namespace Appmarket.Respositories
             await this.context.SaveChangesAsync();
         }
 
+        public async Task DeleteOrderAsync(int id)
+        {
+            var order = await this.context.Orders.
+               Include(o => o.Items).
+               FirstOrDefaultAsync(m => m.Id == id); 
+            if (order == null)
+            {
+                return;
+            }
+
+            this.context.Orders.Remove(order);
+            await this.context.SaveChangesAsync();
+        }
+
         public async Task<bool> ConfirmOrderAsync(string userName)
         {
             var user = await this.userHelper.GetUserAsync(userName);

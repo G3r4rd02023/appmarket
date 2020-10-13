@@ -18,6 +18,8 @@ namespace Appmarket.Respositories
 
         Task DeleteDetailTempAsync(int id);
 
+        Task DeleteOrderAsync(int id);
+
         Task<bool> ConfirmOrderAsync(string userName);
 
         Task DeliverOrder(DeliverViewModel model);

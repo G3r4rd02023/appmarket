@@ -74,6 +74,17 @@ namespace Appmarket.Controllers
 			return this.RedirectToAction("Create");
 		}
 
+		public async Task<IActionResult> DeleteOrder(int? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			await this.orderRepository.DeleteOrderAsync(id.Value);
+			return this.RedirectToAction("Create");
+		}
+
 		public async Task<IActionResult> Increase(int? id)
 		{
 			if (id == null)
