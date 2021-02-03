@@ -48,7 +48,7 @@ namespace Appmarket.Controllers
 
                 if (model.ImageFile != null)
                 {
-                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "categories");
+                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "categorias");
                 }
 
                 try
@@ -105,7 +105,7 @@ namespace Appmarket.Controllers
 
                 if (model.ImageFile != null)
                 {
-                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "categories");
+                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "categorias");
                 }
 
                 try

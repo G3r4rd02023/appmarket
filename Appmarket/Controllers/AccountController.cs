@@ -97,7 +97,7 @@ namespace Appmarket.Controllers
 
                 if (model.ImageFile != null)
                 {
-                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "users");
+                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "usuarios");
                 }
 
                 User user = await _userHelper.AddUserAsync(model, imageId, UserType.User);
@@ -190,7 +190,7 @@ namespace Appmarket.Controllers
 
                 if (model.ImageFile != null)
                 {
-                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "users");
+                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "usuarios");
                 }
 
                 User user = await _userHelper.GetUserAsync(User.Identity.Name);
@@ -356,7 +356,7 @@ namespace Appmarket.Controllers
 
                 if (model.ImageFile != null)
                 {
-                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "users");
+                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "usuarios");
                 }
 
                 User user = await _userHelper.AddUserAsync(model, imageId, UserType.Admin);

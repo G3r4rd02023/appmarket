@@ -57,7 +57,7 @@ namespace Appmarket.Controllers
 
                     if (model.ImageFile != null)
                     {
-                        Guid imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "products");
+                        Guid imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "productos");
                         product.ProductImages = new List<ProductImage>
                 {
                     new ProductImage { ImageId = imageId }
@@ -121,7 +121,7 @@ namespace Appmarket.Controllers
 
                     if (model.ImageFile != null)
                     {
-                        Guid imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "products");
+                        Guid imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "productos");
                         if (product.ProductImages == null)
                         {
                             product.ProductImages = new List<ProductImage>();
@@ -236,7 +236,7 @@ namespace Appmarket.Controllers
 
                 try
                 {
-                    Guid imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "products");
+                    Guid imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "productos");
                     if (product.ProductImages == null)
                     {
                         product.ProductImages = new List<ProductImage>();

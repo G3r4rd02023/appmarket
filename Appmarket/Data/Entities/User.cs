@@ -11,8 +11,9 @@ namespace Appmarket.Data.Entities
     
         public class User : IdentityUser
         {
-            [MaxLength(20)]
+            [MaxLength(20,ErrorMessage = "* Solo se permiten números.")]
             [Required]
+            [RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten números.")]
             public string Document { get; set; }
 
             [Display(Name = "First Name")]
@@ -35,9 +36,9 @@ namespace Appmarket.Data.Entities
             [Display(Name = "Image")]
             public string ImageFullPath => ImageId == Guid.Empty
                 ? $"https://localhost:44367/images/noimage.png"
-                : $"https://onsale.blob.core.windows.net/users/{ImageId}";
+                : $"https://tecnologershn.blob.core.windows.net/usuarios/{ImageId}";
 
-            [Display(Name = "User Type")]
+        [Display(Name = "User Type")]
             public UserType UserType { get; set; }
 
             public City City { get; set; }
